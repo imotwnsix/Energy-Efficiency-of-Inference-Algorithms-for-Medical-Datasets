@@ -1,0 +1,10 @@
+library(pROC)
+Y_true <- read.csv("C:\\Users\\§E®a·ç\\3.14\\Energy\\MRSAauc\\NN5_ans.csv")  #dataframe
+Y_true <- Y_true$answer
+
+Y_pred <- read.csv("C:\\Users\\§E®a·ç\\3.14\\Energy\\MRSAauc\\NN5_Rprob.csv")  #dataframe
+Y_pred <- Y_pred$prob
+#class(Y_pred)
+
+auc(response = Y_true, predictor =  Y_pred)
+ci.auc(response = Y_true, predictor =  Y_pred)
